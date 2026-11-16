@@ -444,6 +444,77 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 @media(max-width:1180px){body{overflow:auto}.app{height:auto;min-height:100dvh}.view{height:auto;overflow:visible}.view.v-capa{height:calc(100dvh - 62px)}.col{overflow:visible}.page{height:auto}.split,.cls,.ol{min-height:0}.list{max-height:46vh}.glist,.det,.edet{overflow:visible}.cycle svg{max-height:380px}}
 @media(max-width:720px){.bar{height:auto;flex-wrap:wrap;padding-top:8px}.tabs{width:100%;margin:0;order:3}#muteBtn{margin-left:auto}.brand{font-size:18px}.brand svg{width:34px}.tabs a{font-size:15px;padding:8px 2px}.drawer{top:0}.split,.cls,.ol{grid-template-columns:minmax(0,1fr)}.memb{grid-template-columns:minmax(0,1fr)}.lvl{grid-template-columns:repeat(4,minmax(0,1fr))}.lvl>b{grid-column:1/-1;padding:0}.view.v-capa{height:calc(100dvh - 96px)}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ===== ORIGENS: o baralho na mesa de feltro ===== */
+.deckv{height:100%;display:grid;grid-template-rows:auto minmax(0,1fr);gap:12px;padding:14px max(2vw,12px) 0;max-width:1540px;margin:0 auto}
+.thead{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:end;justify-content:space-between}
+.thead h2{font-size:clamp(26px,3vw,38px);color:var(--bone)}
+.thead p{margin:4px 0 0;color:var(--dim)}
+.ttools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ttools input{width:230px;background:#0008;border:1px solid var(--line);color:var(--ink);padding:9px 11px;font-size:15px}
+.suitb{display:inline-flex;gap:7px;align-items:center;font:700 13px Cinzel,serif;border:1px solid var(--line);background:#0006;color:var(--dim);padding:6px 11px 6px 6px;cursor:pointer;min-height:38px}
+.suitb i{width:24px;height:24px;border-radius:50%;background:#efe2c4;display:grid;place-items:center}
+.suitb svg{width:16px;height:16px}
+.suitb.on{border-color:var(--bone);color:var(--bone);background:#ffffff14}
+.suitb em{font-style:normal;color:var(--dim);font-size:11px}
+.shuf{font:900 15px Cinzel,serif;background:linear-gradient(180deg,#c3141b,#6e0a0d);color:#f3e6c9;border:0;padding:10px 18px 10px 12px;display:inline-flex;gap:10px;align-items:center;box-shadow:0 3px 0 #3a0405,0 0 26px #c8141a55;cursor:pointer;min-height:44px}
+.shuf:hover{filter:brightness(1.12)}
+.shuf svg{width:30px;height:30px}
+.felt{overflow:auto;border-radius:18px 18px 0 0;background:radial-gradient(ellipse at 50% 25%,#244a33,#11291c 55%,#08150e);box-shadow:inset 0 0 0 10px #3a1f10,inset 0 0 0 12px #8a6a3a,inset 0 0 0 14px #2a1408,inset 0 0 90px #000c;padding:30px clamp(18px,3vw,44px) 44px;position:relative}
+.felt::before{content:"";position:absolute;inset:14px;pointer-events:none;border-radius:12px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 .1 0 0 0 0 .05 0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.8}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:24px 18px;perspective:1300px;position:relative}
+.card{position:relative;aspect-ratio:5/7;border:0;padding:0;background:none;cursor:pointer;transition:transform .18s ease-out;transform-style:preserve-3d;font:inherit}
+.card .cf,.face .cf{position:absolute;inset:0}
+.card:hover .cf{box-shadow:0 18px 30px #000c,0 0 0 2px #ffd36b,inset 0 0 0 5px #f3e6c9,inset 0 0 0 6px var(--sc),inset 0 0 30px #8a5a2a55}
+.card.in{animation:dealin .55s cubic-bezier(.2,1.2,.4,1) both;animation-delay:calc(var(--i)*22ms)}
+@keyframes dealin{from{transform:translate(var(--fx,0),-160px) rotate(var(--fr,0deg)) scale(.7);opacity:0}}
+.cf{border-radius:10px;background:radial-gradient(ellipse at 50% 38%,#f8eed4,#dcc394 88%);box-shadow:0 8px 18px #000a,inset 0 0 0 5px #f3e6c9,inset 0 0 0 6px var(--sc),inset 0 0 30px #8a5a2a55;color:#24120a;overflow:hidden;font-family:"IM Fell English",serif}
+.cf::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,#fff6 45%,transparent 60%);transform:translateX(-120%);transition:transform .6s}
+.card:hover .cf::after{transform:translateX(120%)}
+.cx{position:absolute;display:grid;justify-items:center;gap:2px;font:900 12px Cinzel,serif;color:var(--sc);line-height:1}
+.cx svg{width:15px;height:15px}
+.cx.tl{left:10px;top:10px}.cx.br{right:10px;bottom:10px;transform:rotate(180deg)}
+.cwm{position:absolute;inset:20% 16%;opacity:.1;display:grid;place-items:center}
+.cwm svg{width:100%;height:100%}
+.cbody{position:absolute;inset:15% 11% 13%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:3px}
+.cbody small{font:900 9.5px Cinzel,serif;color:var(--sc)}
+.cbody h3{font:clamp(15px,1.35vw,19px)/1.05 Rye,serif;color:#1d0d06;overflow-wrap:anywhere;hyphens:auto;max-width:100%}
+.cr{width:58%;height:1px;background:var(--sc);opacity:.6;margin:5px 0 3px}
+.cp{font-style:italic;font-size:12.5px;margin:0;line-height:1.25}
+.cbody ul{list-style:none;margin:5px 0 0;padding:0;font:700 10px Cinzel,serif;color:#6b4a2a;line-height:1.3}
+.cb{position:absolute;inset:0;border-radius:10px;background:repeating-linear-gradient(45deg,#d4a54a26 0 1px,transparent 1px 9px),repeating-linear-gradient(-45deg,#d4a54a26 0 1px,transparent 1px 9px),radial-gradient(ellipse at 50% 45%,#6a110c,#2a0504 80%);box-shadow:0 8px 18px #000a,inset 0 0 0 5px #2a0504,inset 0 0 0 6px #d4a54a,inset 0 0 0 9px #2a0504,inset 0 0 0 10px #d4a54a88;display:grid;place-items:center}
+.cbi{width:62%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#3a0806,#1a0302);box-shadow:0 0 0 2px #d4a54a,0 0 0 5px #2a0504,0 0 0 6px #d4a54a88;display:grid;place-items:center;align-content:center;gap:2px}
+.cbi svg{width:78%}
+.cbi span{font:14px Rye,serif;color:#d4a54a}
+.empty3{grid-column:1/-1;text-align:center;color:#cfe3d4;font-style:italic;padding:40px}
+
+/* mesa do sorteio */
+.deal{position:fixed;inset:0;z-index:85;background:radial-gradient(ellipse at 50% 45%,#1f4230f0,#040a06fa);display:grid;place-items:center;overflow:hidden}
+.deal[hidden]{display:none}
+.dstage{position:absolute;left:50%;top:48%;width:0;height:0}
+.dk{position:absolute;width:150px;aspect-ratio:5/7;left:-75px;top:-105px;transform-origin:50% 160%;will-change:transform}
+.dshow{position:relative;display:flex;gap:30px;align-items:center;justify-content:center;flex-wrap:wrap;padding:24px;max-height:100dvh;overflow:auto;width:100%}
+.bigc{width:min(330px,72vw);aspect-ratio:5/7;perspective:1600px;position:relative;flex:0 0 auto}
+.bigc .halo{position:absolute;inset:-35%;background:radial-gradient(circle,#ffd36b77,#ff8a1a22 35%,transparent 62%);animation:halo 2.4s ease-in-out infinite;pointer-events:none}
+@keyframes halo{50%{transform:scale(1.08);opacity:.7}}
+.flipper{position:absolute;inset:0;transform-style:preserve-3d}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.face.back{transform:rotateY(180deg)}
+.bigc .cx{font-size:17px}.bigc .cx svg{width:22px;height:22px}.bigc .cx.tl{left:14px;top:14px}.bigc .cx.br{right:14px;bottom:14px}
+.bigc .cbody small{font-size:13px}.bigc .cbody h3{font-size:clamp(28px,6vw,38px)}.bigc .cp{font-size:16px}.bigc .cbody ul{font-size:13px}
+.bigc .cbi span{font-size:22px}
+.dinfo{width:min(470px,92vw);max-height:78dvh;overflow:auto;padding:22px 24px;color:#2a170c;position:relative}
+.dinfo .w{font:900 12px Cinzel,serif;color:#7a0b0d;border-block:2px solid #7a0b0d;padding:3px 0;text-align:center}
+.dinfo h3{font:clamp(30px,4vw,44px)/1 Rye,serif;text-align:center;margin:12px 0 6px}
+.dinfo .p{text-align:center;font-style:italic;margin:0 0 12px}
+.dinfo p{margin:0 0 10px;font-size:16px}
+.dinfo b.pw{color:#7a0b0d}
+.dacts{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}
+.dacts button{font:900 13px Cinzel,serif;border:0;padding:10px 14px;cursor:pointer;min-height:42px}
+.dacts .a1{background:#7a0b0d;color:#f3e6c9}.dacts .a2{background:#24130a;color:#f3e6c9}.dacts .a3{background:transparent;border:1px solid #6b4a2a;color:#2a170c}
+.dhint{position:absolute;bottom:24px;left:0;right:0;text-align:center;font:700 15px Cinzel,serif;color:#cfe3d4;opacity:.8}
+.spk{position:absolute;left:50%;top:50%;width:7px;height:7px;margin:-3px;border-radius:50%;background:#ffd36b;box-shadow:0 0 10px #ffb84a;animation:mote 1.3s ease-out forwards;pointer-events:none}
+@media(max-width:1000px) and (min-width:721px){.tabs{gap:4px 12px}.tabs a{font-size:15px}.brand{font-size:18px}.brand svg{width:34px}}
+@media(max-width:720px){.ttools input{width:100%}.dk{width:110px;left:-55px;top:-77px}.cgrid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:16px 12px}}
 </style>
 </head>
 <body>
@@ -591,15 +662,13 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 </div>
 </section>
 
-<section class="view" data-v="origens"><div class="page">
-  <header><h2>Origens</h2><p>Quem você era antes do Paranormal: duas perícias treinadas e um poder.</p></header>
-  <div class="split">
-    <div style="display:grid;grid-template-rows:auto minmax(0,1fr);gap:8px;min-height:0">
-      <div class="otools"><input class="inp" id="oq" type="search" placeholder="Buscar origem ou perícia…" aria-label="Buscar origem"><button class="btn red sm" type="button" id="oRand">Sortear</button></div>
-      <div class="list" id="olist"></div>
-    </div>
-    <div class="det" id="odet"></div>
-  </div>
+<section class="view" data-v="origens"><div class="deckv">
+  <header class="thead">
+    <div><h2>Origens</h2><p>Quem você era antes do Paranormal. <span id="ocount"></span> cartas, quatro naipes.</p></div>
+    <div class="ttools"><input id="oq" type="search" placeholder="Buscar origem ou perícia…" aria-label="Buscar origem"><span id="suits" style="display:contents"></span>
+      <button class="shuf" type="button" id="oRand"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="7" width="15" height="21" rx="2" fill="#2a0504" stroke="#d4a54a" transform="rotate(-14 10 17)"/><rect x="9" y="5" width="15" height="21" rx="2" fill="#4a0a07" stroke="#d4a54a"/><rect x="14" y="4" width="15" height="21" rx="2" fill="#f3e6c9" stroke="#2a0504" transform="rotate(12 21 14)"/></svg>Embaralhar e tirar uma</button></div>
+  </header>
+  <div class="felt"><div class="cgrid" id="cgrid"></div></div>
 </div></section>
 
 <section class="view" data-v="classes"><div class="page">
@@ -1174,14 +1243,83 @@ function done(m){save();paintAll(true);$('#modal').hidden=true;toast(m)}
 
 function paintAll(full){if(full){paintId();buildVitals()}paintPent();updVitals();paintDef();paintSkills();paintPane(full)}
 paintAll(true);
-/* ================= ORIGENS ================= */
-let curO=Math.max(0,S.origem);
-function paintOL(){const q=$('#oq').value.trim().toLowerCase();$('#olist').innerHTML=ORI.map((o,i)=>({o,i})).filter(({o})=>!q||(o.n+' '+o.p).toLowerCase().includes(q)).map(({o,i})=>`<button type="button" data-o="${i}" class="${i===curO?'on':''}"><span>${esc(o.n)}</span><small>${esc(o.p.length>34?o.p.slice(0,32)+'…':o.p)}</small></button>`).join('')||'<p style="padding:14px;color:var(--dim)">Ninguém com esse nome por estas bandas.</p>';
-  const o=ORI[curO];$('#odet').innerHTML=`<div class="poster"><div class="w">ORIGEM Nº ${curO+1} DE ${ORI.length}</div><h3>${esc(o.n)}</h3><p class="p">Perícias treinadas: ${esc(o.p)}</p><p>${esc(o.d)}</p>${o.pw.map(p=>`<p><b>${esc(p[0])}.</b> ${esc(p[1])}</p>`).join('')}<div style="text-align:center;margin-top:14px"><button class="btn red sm" type="button" id="oUse">Usar na ficha</button></div></div>`}
-paintOL();$('#oq').addEventListener('input',paintOL);
-$('#olist').addEventListener('click',e=>{const b=e.target.closest('[data-o]');if(b){curO=+b.dataset.o;paintOL()}});
-$('#odet').addEventListener('click',e=>{if(e.target.id==='oUse'){S.origem=curO;applyOrigin(curO);save();paintAll(true);location.hash='ficha'}});
-$('#oRand').addEventListener('click',()=>{$('#oq').value='';roll('1d'+ORI.length,'SORTEIO DE ORIGEM',{onResult:c=>{curO=c.total-1;paintOL();const el=document.querySelector(`#olist [data-o="${curO}"]`);el&&el.scrollIntoView({block:'center'})},note:ORI.length+' origens na Fronteira'})});
+/* ================= ORIGENS: o baralho ================= */
+const SUITS={P:{n:'Pólvora',c:'#1d1612',i:'<path d="M12 2c-2.2 2-3 5-3 8h6c0-3-.8-6-3-8Z"/><rect x="8.5" y="11" width="7" height="9" rx=".8"/><rect x="8" y="20.4" width="8" height="1.8" rx=".5"/>'},
+  H:{n:'Pecado',c:'#b3121a',i:'<path d="M12 21C6 16 2.5 12.6 2.5 8.6 2.5 5.8 4.7 3.6 7.3 3.6c1.9 0 3.6 1.1 4.7 2.8 1.1-1.7 2.8-2.8 4.7-2.8 2.6 0 4.8 2.2 4.8 5 0 4-3.5 7.4-9.5 12.4Z"/>'},
+  O:{n:'Ouro',c:'#a8761a',i:'<path d="M12 1.5 20 12 12 22.5 4 12Z"/><circle cx="12" cy="12" r="2.6" fill="#f3e6c9"/>'},
+  T:{n:'Terra',c:'#2f4a22',i:'<path d="M5 3h3.4v8.5a3.6 3.6 0 0 0 7.2 0V3H19v8.5a7 7 0 0 1-14 0Z"/><g fill="#f3e6c9"><circle cx="6.7" cy="5.5" r=".8"/><circle cx="17.3" cy="5.5" r=".8"/><circle cx="6.9" cy="9" r=".8"/><circle cx="17.1" cy="9" r=".8"/></g>'}};
+const SKS={P:['Luta','Pontaria','Iniciativa','Tática','Reflexos','Atletismo','Acrobacia'],H:['Diplomacia','Enganação','Intimidação','Artes','Intuição','Crime'],O:['Ciências','Atualidades','Investigação','Medicina','Profissão','Inovação','Ocultismo','Religião'],T:['Sobrevivência','Fortitude','Adestramento','Percepção','Vontade','Furtividade','Pilotagem']};
+const suitOf=o=>{let b='T',bs=0;Object.keys(SKS).forEach(s=>{const n=SKS[s].filter(p=>o.p.includes(p)).length;if(n>bs){bs=n;b=s}});return b};
+const roman=n=>[[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']].reduce((s,[v,r])=>{while(n>=v){s+=r;n-=v}return s},'');
+const sIco=(k,c)=>`<svg viewBox="0 0 24 24" fill="${c||SUITS[k].c}" aria-hidden="true">${SUITS[k].i}</svg>`;
+function cardFront(i){const o=ORI[i],k=suitOf(o),s=SUITS[k];
+  return`<div class="cf" style="--sc:${s.c}"><div class="cx tl"><b>${roman(i+1)}</b>${sIco(k)}</div><div class="cx br"><b>${roman(i+1)}</b>${sIco(k)}</div><div class="cwm">${sIco(k)}</div>
+  <div class="cbody"><small>${s.n.toUpperCase()}</small><h3>${esc(o.n)}</h3><div class="cr"></div><p class="cp">${esc(o.p.length>70?o.p.slice(0,68)+'…':o.p)}</p><ul>${o.pw.map(p=>`<li>${esc(p[0])}</li>`).join('')}</ul></div></div>`}
+const BACK=`<div class="cb"><div class="cbi"><svg viewBox="-250 -125 500 285" aria-hidden="true">${SKULL_IN.replace(/url\(#bone2\)/g,'#e9d8b0').replace(/#160404/g,'#3a0806')}</svg><span>P &amp; P</span></div></div>`;
+let oSuit='',oDealt=false,dealing=false;
+$('#ocount').textContent=ORI.length;
+function paintSuits(){$('#suits').innerHTML=Object.keys(SUITS).map(k=>`<button class="suitb${oSuit===k?' on':''}" type="button" data-su="${k}" title="Naipe de ${SUITS[k].n}"><i>${sIco(k)}</i>${SUITS[k].n} <em>${ORI.filter(o=>suitOf(o)===k).length}</em></button>`).join('')}
+function paintDeck(anim){const q=$('#oq').value.trim().toLowerCase();let n=0;
+  $('#cgrid').innerHTML=ORI.map((o,i)=>({o,i})).filter(({o})=>(!oSuit||suitOf(o)===oSuit)&&(!q||(o.n+' '+o.p).toLowerCase().includes(q))).map(({i})=>`<button class="card${anim?' in':''}" type="button" data-o="${i}" style="--i:${n++};--fx:${((i*37)%200)-100}px;--fr:${((i*53)%40)-20}deg" aria-label="${esc(ORI[i].n)}">${cardFront(i)}</button>`).join('')||'<p class="empty3">Nenhuma carta com esse nome neste baralho.</p>'}
+paintSuits();paintDeck(false);
+$('#oq').addEventListener('input',()=>paintDeck(false));
+$('#suits').addEventListener('click',e=>{const b=e.target.closest('[data-su]');if(!b)return;oSuit=oSuit===b.dataset.su?'':b.dataset.su;paintSuits();paintDeck(true);riffle(10)});
+/* inclinação 3D ao passar o mouse */
+let tiltC=null;
+$('#cgrid').addEventListener('pointermove',e=>{const c=e.target.closest('.card');if(tiltC&&tiltC!==c)tiltC.style.transform='';tiltC=c;if(!c||reduced())return;const r=c.getBoundingClientRect(),dx=(e.clientX-r.left)/r.width-.5,dy=(e.clientY-r.top)/r.height-.5;c.style.transform=`translateY(-8px) rotateX(${-dy*14}deg) rotateY(${dx*16}deg)`});
+$('#cgrid').addEventListener('pointerleave',()=>{if(tiltC)tiltC.style.transform='';tiltC=null});
+$('#cgrid').addEventListener('click',e=>{const c=e.target.closest('.card');if(!c)return;flick();showCard(+c.dataset.o,c.getBoundingClientRect())});
+
+/* sons de carta */
+function riffle(n){for(let i=0;i<(n||26);i++)noise(.014,2600+Math.random()*2600,3,.28,i*.022+Math.random()*.008)}
+function flick(){noise(.06,3200,1.2,.45);noise(.05,1400,1,.2,.03)}
+function swoosh(){noise(.45,1500,.6,.22)}
+
+/* a mesa do sorteio */
+const deal=document.createElement('div');deal.className='deal';deal.hidden=true;deal.innerHTML='<div class="dstage" id="dstage"></div><div class="dshow" id="dshow"></div><p class="dhint" id="dhint"></p>';document.body.appendChild(deal);
+const DS=deal.querySelector('#dstage'),DW=deal.querySelector('#dshow'),DH=deal.querySelector('#dhint');
+function closeDeal(){if(dealing)return;deal.hidden=true;DS.innerHTML='';DW.innerHTML=''}
+deal.addEventListener('click',e=>{const b=e.target.closest('button');if(b){const a=b.dataset.da;if(a==='use'){const i=+b.dataset.i;S.origem=i;applyOrigin(i);save();paintAll(true);dealing=false;closeDeal();location.hash='ficha';toast(ORI[i].n+' agora é sua origem')}else if(a==='again')shuffleDeal();else if(a==='close')closeDeal();return}
+  if(!e.target.closest('.dinfo,.bigc'))closeDeal()});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&!deal.hidden)closeDeal()});
+const ANIM=(el,kf,o)=>el.animate(kf,Object.assign({fill:'forwards',easing:'cubic-bezier(.3,.7,.3,1)'},o));
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+function infoHtml(i){const o=ORI[i];return`<div class="dinfo paper unf"><div class="w">ORIGEM ${roman(i+1)} · NAIPE DE ${SUITS[suitOf(o)].n.toUpperCase()}</div><h3>${esc(o.n)}</h3><p class="p">Perícias treinadas: ${esc(o.p)}</p><p>${esc(o.d)}</p>${o.pw.map(p=>`<p><b class="pw">${esc(p[0])}.</b> ${esc(p[1])}</p>`).join('')}
+  <div class="dacts"><button class="a1" type="button" data-da="use" data-i="${i}">Usar na ficha</button><button class="a2" type="button" data-da="again">Embaralhar de novo</button><button class="a3" type="button" data-da="close">Voltar à mesa</button></div></div>`}
+async function showCard(i,from,fromBack){deal.hidden=false;DS.innerHTML='';DH.textContent='';
+  DW.innerHTML=`<div class="bigc"><div class="halo"></div><div class="flipper"><div class="face front">${cardFront(i)}</div><div class="face back">${BACK}</div></div></div>${infoHtml(i)}`;
+  const big=DW.querySelector('.bigc'),fl=DW.querySelector('.flipper'),inf=DW.querySelector('.dinfo');
+  if(reduced())return;
+  inf.style.opacity=0;
+  if(from){const r=big.getBoundingClientRect(),dx=from.left+from.width/2-(r.left+r.width/2),dy=from.top+from.height/2-(r.top+r.height/2),s=from.width/r.width;
+    await ANIM(fl,[{transform:`translate(${dx}px,${dy}px) scale(${s}) rotateY(0deg)`},{transform:`translate(${dx*.4}px,${dy*.4-60}px) scale(${(s+1)/2}) rotateY(180deg)`,offset:.5},{transform:'none'}],{duration:850,easing:'cubic-bezier(.4,.1,.2,1)'}).finished}
+  else{await ANIM(fl,[{transform:'translateY(40px) scale(.45) rotateY(180deg)'},{transform:'translateY(-90px) scale(1.18) rotateY(90deg)',offset:.55},{transform:'none'}],{duration:950,easing:'cubic-bezier(.3,.9,.3,1)'}).finished;
+    SFX.heal();SFX.coin();for(let k=0;k<36;k++){const s=document.createElement('i');s.className='spk';const a=Math.random()*Math.PI*2,rr=140+Math.random()*240;s.style.cssText=`--dx:${Math.cos(a)*rr}px;--dy:${Math.sin(a)*rr}px;animation-delay:${Math.random()*.2}s`;big.appendChild(s);setTimeout(()=>s.remove(),1700)}}
+  inf.style.opacity='';inf.classList.remove('unf');void inf.offsetWidth;inf.classList.add('unf')}
+async function shuffleDeal(){if(dealing)return;dealing=true;const pick=rnd(ORI.length)-1;deal.hidden=false;DW.innerHTML='';DS.innerHTML='';DS.style.transform='';
+  if(reduced()){dealing=false;showCard(pick,null,true);return}
+  const N=innerWidth<720?16:24,cards=[];
+  for(let i=0;i<N;i++){const c=document.createElement('div');c.className='dk';c.innerHTML=BACK;DS.appendChild(c);cards.push(c)}
+  const stack=i=>`translate(0px,${-i*.7}px) rotate(0deg)`;
+  DH.textContent='Juntando o maço…';
+  await Promise.all(cards.map((c,i)=>ANIM(c,[{transform:`translate(${(Math.random()-.5)*innerWidth}px,${innerHeight*.75}px) rotate(${(Math.random()-.5)*220}deg)`,opacity:0},{transform:stack(i),opacity:1}],{duration:700,delay:i*22,easing:'cubic-bezier(.2,1,.3,1)'}).finished));
+  const sp=innerWidth<720?95:160;
+  for(let r=0;r<2;r++){DH.textContent=r?'Mais uma vez…':'Embaralhando…';riffle(30);
+    await Promise.all(cards.map((c,i)=>{const L=i%2?1:-1;return ANIM(c,[{transform:stack(i)},{transform:`translate(${L*sp}px,${-i*.7+18}px) rotate(${L*14}deg)`,offset:.4},{transform:`translate(${L*sp*.8}px,${-i*.7+6}px) rotate(${L*-6}deg)`,offset:.62},{transform:stack((i*7+r*5)%N)}],{duration:950,delay:(i%2?0:60)+i*9,easing:'cubic-bezier(.45,0,.2,1)'}).finished}))}
+  DH.textContent='Abrindo o leque…';swoosh();
+  await Promise.all(cards.map((c,i)=>{const a=-80+160*i/(N-1);return ANIM(c,[{transform:stack(i)},{transform:`translate(0px,0px) rotate(${a}deg)`}],{duration:650,delay:i*14,easing:'cubic-bezier(.2,1.3,.4,1)'}).finished}));
+  swoosh();riffle(14);
+  await ANIM(DS,[{transform:'rotate(0deg) scale(1)'},{transform:'rotate(200deg) scale(1.1)',offset:.6},{transform:'rotate(360deg) scale(1)'}],{duration:1100,easing:'cubic-bezier(.6,0,.3,1)'}).finished;
+  DS.getAnimations().forEach(a=>a.cancel());
+  DH.textContent='O destino escolheu…';riffle(12);
+  await Promise.all(cards.map((c,i)=>ANIM(c,[{transform:`rotate(${-80+160*i/(N-1)}deg)`},{transform:stack(i)}],{duration:420,delay:(N-i)*10}).finished));
+  const top=cards[Math.floor(N/2)];flick();
+  await ANIM(top,[{transform:stack(N/2)},{transform:'translate(0px,-150px) rotate(-8deg) scale(1.15)'}],{duration:420,easing:'cubic-bezier(.2,1.4,.4,1)'}).finished;
+  cards.forEach((c,i)=>{if(c!==top)ANIM(c,[{transform:stack(i),opacity:1},{transform:`translate(${(Math.random()-.5)*500}px,${innerHeight}px) rotate(${(Math.random()-.5)*160}deg)`,opacity:0}],{duration:700,delay:i*15,easing:'cubic-bezier(.5,0,.8,.4)'})});
+  await sleep(250);SFX.shot();
+  DS.innerHTML='';DH.textContent='';dealing=false;
+  showCard(pick,null,true)}
+$('#oRand').addEventListener('click',shuffleDeal);
 
 /* ================= CLASSES ================= */
 let curC=S.classe||'Combatente';
@@ -1261,7 +1399,7 @@ paintBook();
 /* ================= ROTAS ================= */
 const VIEWS=['capa','ficha','origens','classes','outro-lado','grimorio'];
 function route(){const h=location.hash.slice(1),v=VIEWS.includes(h)?h:'capa';$$('.view').forEach(x=>x.classList.toggle('on',x.dataset.v===v));$$('#tabs a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+v));
-  if(v==='capa')dispatchEvent(new Event('resize'));if(v==='grimorio'){bDrawn='';paintBook()}if(route.d)SFX.spur();route.d=1;window.scrollTo(0,0)}
+  if(v==='capa')dispatchEvent(new Event('resize'));if(v==='grimorio'){bDrawn='';paintBook()}if(v==='origens')paintDeck(true);if(route.d)SFX.spur();route.d=1;window.scrollTo(0,0)}
 addEventListener('hashchange',route);route();
 $('#logBtn').addEventListener('click',()=>$('#drawer').classList.toggle('on'));$('#logX').addEventListener('click',()=>$('#drawer').classList.remove('on'));
 }
